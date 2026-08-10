@@ -3,366 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Receitas Airfryer — Crocantes em até 20 Minutos, Sem Óleo</title>
+<title>Seu ebook está sendo preparado</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --char:#15161A;
-    --panel:#1F2024;
-    --panel-2:#26282D;
+    --panel:#232529;
     --panel-line:rgba(255,255,255,0.08);
     --steel:#9AA0A6;
-    --steel-dim:#63686E;
-    --ember:#D9622F;
-    --ember-soft:#E89A6B;
-    --ember-dim:#A6491F;
-    --crisp:#FBF6EE;
-    --ink:#1B1B18;
-    --ink-soft:#5A564C;
+    --ember:#FF4E1F;
   }
   *{box-sizing:border-box; margin:0; padding:0;}
-  html{ -webkit-text-size-adjust:100%; }
   body{
     font-family:'Inter', sans-serif;
-    background:var(--crisp);
-    color:var(--ink);
+    background:var(--char);
+    color:#fff;
+    min-height:100vh;
+    display:flex; align-items:center; justify-content:center;
+    padding:24px;
     -webkit-font-smoothing:antialiased;
   }
-  h1,h2{ font-family:'Archivo Black', sans-serif; text-transform:uppercase; line-height:1.12; letter-spacing:-0.005em; }
-  a{ color:inherit; }
-  img{ max-width:100%; display:block; }
-
-  /* ---------- header ---------- */
-  header{
-    display:flex; align-items:center; justify-content:center;
-    padding:16px 20px;
-    background:var(--char);
-    border-bottom:1px solid var(--panel-line);
+  .card{
+    max-width:480px;
+    width:100%;
+    text-align:center;
   }
-  .logo{
-    display:flex; align-items:center; gap:8px;
-    font-family:'Archivo Black', sans-serif; font-size:14px; letter-spacing:0.02em;
-    color:#fff;
-  }
-  .logo .dot{ width:7px; height:7px; border-radius:50%; background:var(--ember); }
-
-  /* ---------- hero ---------- */
-  .hero{ background:var(--char); color:#fff; padding:28px 20px 36px; }
-  .hero-inner{ max-width:1080px; margin:0 auto; }
-  .eyebrow{
-    font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
-    color:var(--ember-soft);
-    display:block; margin-bottom:14px;
-  }
-
-  /* image with glow, mobile-first: sits above the copy */
-  .hero-visual{
-    position:relative;
-    max-width:300px; margin:0 auto 28px;
-  }
-  .hero-glow{
-    position:absolute; inset:-30px;
-    background:radial-gradient(circle, rgba(217,98,47,0.45) 0%, rgba(217,98,47,0) 68%);
-    filter:blur(6px);
-    z-index:0;
-  }
-  .hero-plate{
-    position:relative; z-index:1;
-    aspect-ratio:1/1; border-radius:50%;
-    background:var(--panel);
-    box-shadow:0 20px 44px rgba(0,0,0,0.5), inset 0 0 0 1px var(--panel-line);
-    overflow:hidden;
-    padding:8px;
-  }
-  .hero-plate img{
-    width:100%; height:100%; object-fit:cover; border-radius:50%;
-  }
-  .steam{
-    position:absolute; z-index:2; top:-18px; left:50%; transform:translateX(-50%);
-    width:70px; height:40px; opacity:0.35;
-    filter:blur(3px);
-  }
-
-  .hero-text h1{ font-size:26px; color:#fff; margin-bottom:12px; text-align:center; }
-  .hero-text h1 span{ color:var(--ember-soft); }
-  .hero-sub{ color:var(--steel); font-size:14.5px; line-height:1.6; margin-bottom:24px; text-align:center; }
-
-  /* self-explanatory info panel */
-  .panel{
-    display:grid; grid-template-columns:1fr; gap:1px;
-    background:var(--panel-line);
-    border:1px solid var(--panel-line);
-    border-radius:10px;
-    overflow:hidden;
-    margin-bottom:22px;
-  }
-  .panel .cell{ background:var(--panel); padding:12px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; }
-  .panel .cell .txt{ font-size:12px; color:var(--steel); line-height:1.3; }
-  .panel .cell .txt b{ display:block; font-size:12.5px; color:#fff; font-weight:600; margin-bottom:1px; }
-  .panel .cell .val{ font-family:'Space Mono', monospace; font-size:18px; font-weight:700; color:var(--ember-soft); white-space:nowrap; }
-
-  .price-block{ text-align:center; margin-bottom:20px; }
-  .price-row{ display:flex; align-items:baseline; gap:10px; justify-content:center; }
-  .price-now{ font-family:'Archivo Black', sans-serif; font-size:36px; color:var(--ember-soft); }
-  .price-was{ font-size:15px; text-decoration:line-through; color:var(--steel-dim); }
-  .save-note{ font-size:12.5px; color:var(--steel); margin-top:6px; }
-
-  .cta-wrap{ text-align:center; }
-  .cta-btn{
-    display:block;
+  .dot{
+    width:10px; height:10px; border-radius:50%;
     background:var(--ember);
-    color:#fff;
+    margin:0 auto 20px;
+  }
+  .eyebrow{
+    font-size:12px; font-weight:700; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--ember); margin-bottom:16px;
+  }
+  h1{
     font-family:'Archivo Black', sans-serif;
-    font-size:14.5px; letter-spacing:0.02em;
-    padding:16px 24px;
-    border-radius:8px;
-    text-decoration:none;
-    border-bottom:3px solid var(--ember-dim);
+    text-transform:uppercase;
+    font-size:28px;
+    line-height:1.15;
+    margin-bottom:16px;
   }
-  .cta-btn:active{ transform:translateY(2px); border-bottom-width:1px; }
-  .cta-sub{ font-size:11.5px; color:var(--steel-dim); margin-top:10px; }
-
-  /* ---------- how-it-works chip strip ---------- */
-  .chips{ background:var(--char); padding:0 20px 32px; }
-  .chips-inner{
-    max-width:1080px; margin:0 auto;
-    display:grid; grid-template-columns:1fr 1fr; gap:10px;
+  h1 span{ color:var(--ember); }
+  p{
+    color:var(--steel);
+    font-size:15px;
+    line-height:1.6;
+    margin-bottom:28px;
   }
-  .chip{
+  .panel{
     background:var(--panel);
     border:1px solid var(--panel-line);
-    border-radius:9px;
-    padding:12px 14px;
-    display:flex; align-items:center; gap:9px;
+    border-radius:8px;
+    padding:20px;
+    margin-bottom:24px;
   }
-  .chip .ic{ font-size:15px; }
-  .chip .lbl{ font-size:11.5px; font-weight:600; color:#EDEDED; line-height:1.25; }
-
-  /* ---------- about ---------- */
-  section.about{ padding:52px 20px; background:var(--crisp); }
-  .about-inner{ max-width:1080px; margin:0 auto; }
-  .about-head{ margin-bottom:32px; }
-  .about h2{ font-size:22px; color:var(--ink); margin-bottom:12px; }
-  .about-head p{ color:var(--ink-soft); font-size:14.5px; line-height:1.65; }
-
-  .feature-grid{ display:grid; grid-template-columns:1fr; gap:10px; margin-bottom:36px; }
-  .feature-card{
-    background:var(--char); color:#fff;
-    border-radius:10px; padding:18px;
-    display:flex; align-items:center; gap:14px;
+  .panel .lbl{
+    font-size:10px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--steel); margin-bottom:8px;
   }
-  .feature-card .val{ font-family:'Space Mono', monospace; font-size:19px; font-weight:700; color:var(--ember-soft); min-width:60px; }
-  .feature-card .lbl{ font-size:12.5px; color:var(--steel); line-height:1.4; }
-
-  /* gallery: snap carousel on mobile */
-  .gallery-head{ display:flex; align-items:baseline; justify-content:space-between; margin-bottom:14px; }
-  .gallery-head h3{ font-family:'Archivo Black', sans-serif; text-transform:uppercase; font-size:14px; color:var(--ink); }
-  .gallery-head span{ font-size:11px; color:var(--ink-soft); }
-  .gallery{
-    display:flex; gap:12px; overflow-x:auto; scroll-snap-type:x mandatory;
-    padding-bottom:6px; margin:0 -20px; padding-left:20px; padding-right:20px;
-    -webkit-overflow-scrolling:touch;
+  .panel .val{
+    font-family:'Space Mono', monospace;
+    font-size:24px; font-weight:700;
+    color:var(--ember);
   }
-  .gallery::-webkit-scrollbar{ display:none; }
-  .g-card{
-    flex:0 0 68%; scroll-snap-align:start;
-    border-radius:12px; overflow:hidden;
-    background:#fff;
-    box-shadow:0 8px 20px rgba(27,27,24,0.1);
-  }
-  .g-card img{ aspect-ratio:1/1; object-fit:cover; width:100%; }
-  .g-card .cap{ padding:10px 12px; font-size:12.5px; font-weight:600; color:var(--ink); }
-
-  /* ---------- offer ---------- */
-  section.offer{ background:var(--char); color:#fff; padding:52px 20px; }
-  .offer-inner{ max-width:1080px; margin:0 auto; text-align:center; }
-  .offer-cover{ max-width:220px; margin:0 auto 24px; border-radius:10px; overflow:hidden; box-shadow:0 16px 34px rgba(0,0,0,0.45); }
-  .offer h2{ font-size:22px; color:#fff; margin-bottom:14px; }
-  .offer h2 span{ color:var(--ember-soft); }
-  .guarantee{
-    display:inline-flex; align-items:center; gap:7px;
-    font-size:11.5px; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+  .foot{
+    font-size:12px;
     color:var(--steel);
-    border:1px solid var(--panel-line);
-    border-radius:999px;
-    padding:7px 14px;
-    margin-bottom:20px;
-  }
-
-  footer{
-    padding:26px 20px; text-align:center;
-    color:var(--steel-dim); font-size:11.5px;
-    background:var(--char);
-    border-top:1px solid var(--panel-line);
-  }
-
-  /* ---------- desktop enhancement (mobile-first: this is the exception layer) ---------- */
-  @media (min-width:760px){
-    .hero{ padding:64px 24px 0; }
-    .hero-inner{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:center; padding-bottom:56px; }
-    .hero-text h1{ font-size:42px; text-align:left; }
-    .hero-sub{ text-align:left; margin-left:0; }
-    .eyebrow{ text-align:left; }
-    .hero-visual{ order:2; max-width:360px; margin:0; }
-    .panel{ grid-template-columns:repeat(3,1fr); max-width:460px; }
-    .price-block, .cta-wrap{ text-align:left; }
-    .price-row{ justify-content:flex-start; }
-    .cta-btn{ display:inline-block; }
-
-    .chips{ padding:0 24px 40px; }
-    .chips-inner{ grid-template-columns:repeat(4,1fr); }
-
-    section.about{ padding:80px 24px; }
-    .about-head{ max-width:620px; }
-    .about h2{ font-size:32px; }
-    .about-head p{ font-size:16px; }
-    .feature-grid{ grid-template-columns:repeat(3,1fr); }
-    .feature-card{ flex-direction:column; align-items:flex-start; gap:8px; }
-    .g-card{ flex:0 0 23%; }
-
-    section.offer{ padding:80px 24px; }
-    .offer-inner{ display:grid; grid-template-columns:0.9fr 1.1fr; gap:56px; align-items:center; text-align:left; }
-    .offer-cover{ margin:0; max-width:100%; order:2; }
-    .guarantee{ margin-bottom:22px; }
   }
 </style>
 </head>
 <body>
 
-<header>
-  <div class="logo"><span class="dot"></span>RECEITAS AIRFRYER</div>
-</header>
-
-<!-- ============ HERO ============ -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-visual">
-      <div class="hero-glow"></div>
-      <div class="hero-plate">
-        <img src="assets/asas-de-frango.jpg" alt="Asas de frango crocantes feitas na airfryer">
-      </div>
-    </div>
-
-    <div class="hero-text">
-      <span class="eyebrow">⏱ Oferta relâmpago — só hoje</span>
-      <h1>40 receitas crocantes de airfryer, prontas em até 20 minutos <span>e sem óleo</span></h1>
-      <p class="hero-sub">Do lanche da tarde ao jantar: frango, batatas, salmão e petiscos crocantes por fora, macios por dentro — com ingredientes que você já tem em casa.</p>
-
-      <div class="panel">
-        <div class="cell">
-          <div class="txt"><b>Temperatura média</b>usada nas receitas do livro</div>
-          <div class="val">200°C</div>
-        </div>
-        <div class="cell">
-          <div class="txt"><b>Tempo médio por receita</b>do preparo ao prato pronto</div>
-          <div class="val" id="cd">20 min</div>
-        </div>
-        <div class="cell">
-          <div class="txt"><b>Rende</b>porções por receita</div>
-          <div class="val">2–4</div>
-        </div>
-      </div>
-
-      <div class="price-block">
-        <div class="price-row">
-          <span class="price-now">R$2,99</span>
-          <span class="price-was">R$19,90</span>
-        </div>
-        <div class="save-note">85% off · economia de R$16,91 · acesso imediato</div>
-      </div>
-
-      <div class="cta-wrap">
-        <a href="https://ggcheckout.app/checkout/v4/scaJBl3fgyNY5NOE1tFV" class="cta-btn">Ativar oferta agora</a>
-        <div class="cta-sub">Entrega digital · Garantia de 30 dias</div>
-      </div>
-    </div>
+<div class="card">
+  <div class="dot"></div>
+  <div class="eyebrow">Atualização em andamento</div>
+  <h1>Seu conteúdo está sendo <span>reformulado</span></h1>
+  <p>Estamos com uma atualização em andamento nas receitas. Seu acesso completo estará disponível aqui nesta mesma página — sem que você precise fazer nada.</p>
+  <div class="panel">
+    <div class="lbl">Disponível até</div>
+    <div class="val">20:00 · 10/08</div>
   </div>
-</section>
-
-<div class="chips">
-  <div class="chips-inner">
-    <div class="chip"><span class="ic">🚫💧</span><span class="lbl">Sem óleo</span></div>
-    <div class="chip"><span class="ic">🧾</span><span class="lbl">3–5 ingredientes</span></div>
-    <div class="chip"><span class="ic">📖</span><span class="lbl">40 receitas</span></div>
-    <div class="chip"><span class="ic">⏱</span><span class="lbl">Até 20 min</span></div>
-  </div>
+  <p class="foot">Sua compra está confirmada e segura. Obrigada pela paciência 🧡</p>
 </div>
-
-<!-- ============ SOBRE / FEATURES ============ -->
-<section class="about">
-  <div class="about-inner">
-    <div class="about-head">
-      <h2>Sua airfryer sabe fazer mais que batata congelada</h2>
-      <p>A maioria das receitas de internet foi feita pra fritadeira ou forno e só "adaptada" — por isso não fica crocante. Aqui é o contrário: cada receita foi criada e testada direto na cesta, com tempo e temperatura certos pra cada prato.</p>
-    </div>
-
-    <div class="feature-grid">
-      <div class="feature-card">
-        <div class="val">20 min</div>
-        <div class="lbl">tempo médio da receita à mesa, do preparo ao prato pronto</div>
-      </div>
-      <div class="feature-card">
-        <div class="val">5 ing.</div>
-        <div class="lbl">no máximo por receita — nada de lista de compra gigante</div>
-      </div>
-      <div class="feature-card">
-        <div class="val">0 óleo</div>
-        <div class="lbl">frituras de verdade sem borrifar litro de óleo</div>
-      </div>
-    </div>
-
-    <div class="gallery-head">
-      <h3>Algumas receitas do livro</h3>
-      <span>arraste →</span>
-    </div>
-    <div class="gallery">
-      <div class="g-card">
-        <img src="assets/espetinho-frango.jpg" alt="Espetinho de frango com pimentão">
-        <div class="cap">Espetinho de frango</div>
-      </div>
-      <div class="g-card">
-        <img src="assets/batata-rustica.jpg" alt="Batata rústica assada temperada com alecrim">
-        <div class="cap">Batata rústica</div>
-      </div>
-      <div class="g-card">
-        <img src="assets/salmao-brocolis.jpg" alt="Salmão com brócolis">
-        <div class="cap">Salmão com brócolis</div>
-      </div>
-      <div class="g-card">
-        <img src="assets/bolinho-de-queijo.jpg" alt="Bolinho de queijo crocante">
-        <div class="cap">Bolinho de queijo</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ OFERTA FINAL ============ -->
-<section class="offer">
-  <div class="offer-inner">
-    <div class="offer-text">
-      <span class="eyebrow">Última chance com este preço</span>
-      <h2>40 receitas de <span>airfryer</span> por R$2,99</h2>
-      <div class="guarantee">✓ Garantia de 30 dias — dinheiro de volta</div>
-      <div class="price-block">
-        <div class="price-row">
-          <span class="price-now">R$2,99</span>
-          <span class="price-was">R$19,90</span>
-        </div>
-      </div>
-      <div class="cta-wrap">
-        <a href="https://ggcheckout.app/checkout/v4/scaJBl3fgyNY5NOE1tFV" class="cta-btn">Quero minhas receitas agora</a>
-      </div>
-    </div>
-    <div class="offer-cover">
-      <img src="assets/capa-ebook.png" alt="Capa do ebook Receitas Air Fryer">
-    </div>
-  </div>
-</section>
-
-<footer>
-  © Receitas Airfryer — Produto digital de entrega imediata. Compra segura.
-</footer>
 
 </body>
 </html>
